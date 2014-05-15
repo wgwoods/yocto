@@ -37,5 +37,5 @@ fc-cache
 
 FILES_${PN} = "/etc ${datadir}/fonts"
 
-SRC_URI[md5sum] = "8b601e91725b6d69141b0fcf527948c0"
-SRC_URI[sha256sum] = "82a5823a270715913af51915cc20594568f57afb7450abb989695d8808a4194d"
+SRC_URI[md5sum] = "161462de16e2ca79873bc2b0d2e6c74c"
+SRC_URI[sha256sum] = "d0a72c3ae99f5b8d7470daf091ec43f78dc942795aed5c996ab1aa678702eb5d"
