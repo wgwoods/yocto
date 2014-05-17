@@ -47,6 +47,7 @@ RDEPENDS_${PN} += "     \
 	 libffi-dev \
 	 bison flex \
 	 git \
+	 git-perltools \
 	 gdb \
 	 zip \
 	 ruby \
