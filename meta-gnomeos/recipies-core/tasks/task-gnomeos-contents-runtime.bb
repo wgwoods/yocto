@@ -126,4 +126,5 @@ RDEPENDS_${PN} += "\
 	 elfutils \
          ca-certificates \
          libgcrypt \
+	 perl-module-text-csv \
 	 "
