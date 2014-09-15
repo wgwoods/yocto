@@ -1,0 +1,32 @@
+require llvm.inc
+
+PR = "${INC_PR}.2"
+
+PARALLEL_MAKE_virtclass-native = ""
+
+# Build without -ftree-pre as a workaround for clang segfaulting on x86_64.
+# https://bugzilla.redhat.com/show_bug.cgi?id=791365
+OECMAKE_C_FLAGS_RELEASE += " -fno-tree-pre"
+OECMAKE_CXX_FLAGS += " -fno-tree-pre"
+
+EXTRA_OECMAKE = "\
+  -DLLVM_TABLEGEN=${STAGING_BINDIR_NATIVE}/llvm-tblgen \
+  -DLLVM_TARGETS_TO_BUILD="${LLVM_ARCH}" \
+  -DCMAKE_LINKER:FILEPATH=${LD} \
+  -DCMAKE_AR:FILEPATH=${AR} \
+  -DCMAKE_OBJCOPY:FILEPATH=${OBJCOPY} \
+  -DCMAKE_OBJDUMP:FILEPATH=${OBJDUMP} \
+  -DCMAKE_RANLIB:FILEPATH=${RANLIB} \
+  -DCMAKE_STRIP:FILEPATH=${STRIP} \
+  -DNM_PATH:FILEPATH=${NM} \
+  -DLLVM_ENABLE_PIC:BOOL=ON \
+  -DLLVM_TARGET_ARCH:STRING=${LLVM_ARCH} \
+  -DLLVM_ENABLE_ASSERTIONS:BOOL=ON \
+  -DCMAKE_BUILD_TYPE:STRING=RelWithDebInfo \
+  -DBUILD_SHARED_LIBS:BOOL=ON \
+"
+
+LLVM_RELEASE = "3.4.2"
+
+SRC_URI[md5sum] = "a20669f75967440de949ac3b1bad439c"
+SRC_URI[sha256sum] = "17038d47069ad0700c063caed76f0c7259628b0e79651ce2b540d506f2f1efd7"
