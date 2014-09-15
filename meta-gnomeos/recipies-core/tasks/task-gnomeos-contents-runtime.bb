@@ -27,12 +27,12 @@ RDEPENDS_${PN} += "\
 	 gnutls \
 	 libogg \
 	 libssp \
-	 eglibc-gconvs \
-	 eglibc-binaries \
-	 eglibc-localedatas \
-	 eglibc-charmaps \
-	 eglibc-utils \
-	 eglibc-locale \
+	 glibc-gconvs \
+	 glibc-binaries \
+	 glibc-localedatas \
+	 glibc-charmaps \
+	 glibc-utils \
+	 glibc-locale \
 	 pam-plugin-cracklib \
 	 pam-plugin-env \
 	 pam-plugin-keyinit \

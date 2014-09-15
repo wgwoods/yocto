@@ -11,7 +11,7 @@ SRC_URI[sha256sum] = "53d26e6a4cdb1b662098db5b6dfa71701eeb957299895d021098f135ef
 
 PV = "2.13.2"
 PR = "r1"
-DEPENDS += "eglibc"
+DEPENDS += "glibc"
 
 # Generate only an extra split-debug package (no -doc/-dev packages)
 #
