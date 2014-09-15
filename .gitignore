@@ -8,6 +8,7 @@ scripts/oe-git-proxy-socks
 sources/
 meta-*/
 !meta-skeleton
+!meta-gnomeos
 !meta-hob
 hob-image-*.bb
 *.swp
@@ -17,6 +18,7 @@ hob-image-*.bb
 !meta-yocto
 !meta-yocto-bsp
 !meta-yocto-imported
+!meta-oe
 documentation/user-manual/user-manual.html
 documentation/user-manual/user-manual.pdf
 documentation/user-manual/user-manual.tgz
