@@ -19,14 +19,14 @@ EXTRA_OECONF += "--with-dblib=berkeley \
                  andrew_cv_runpath_switch=none"
 
 do_configure_prepend () {
-    rm -f acinclude.m4 config/libtool.m4
+    rm -f ${S}/acinclude.m4 ${S}/config/libtool.m4
 }
 
 do_compile_prepend () {
-    cd include
-    ${BUILD_CC} ${BUILD_CFLAGS} ${BUILD_LDFLAGS} makemd5.c -o makemd5
-    touch makemd5.o makemd5.lo makemd5
-    cd ..
+    (cd ${B}/include; \
+    ${BUILD_CC} ${BUILD_CFLAGS} ${BUILD_LDFLAGS} ${S}/include/makemd5.c -o makemd5; \
+    touch makemd5.o makemd5.lo makemd5;\
+    )
 }
 
 pkg_postinst_${PN}-bin () {
