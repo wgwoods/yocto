@@ -38,6 +38,6 @@ python do_unpack() {
 }
 
 do_configure() {
-    gnu-configize --force
+    (cd ${S} && gnu-configize --force) || die "failure in running gnu-configize"
     oe_runconf
 }
