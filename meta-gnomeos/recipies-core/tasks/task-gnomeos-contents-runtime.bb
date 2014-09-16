@@ -21,7 +21,7 @@ RDEPENDS_${PN} += "\
 	 gdbm \
 	 pciutils \
 	 tiff \
-	 jpeg \
+	 libjpeg-turbo \
 	 libexif \
 	 libstdc++ \
 	 gnutls \
