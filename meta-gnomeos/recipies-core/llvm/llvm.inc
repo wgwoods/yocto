@@ -27,7 +27,7 @@ LLVM_RELEASE = "${PV}"
 
 # llvm *must* be built out of tree
 OECMAKE_SOURCEPATH = "${S}"
-OECMAKE_BUILDPATH = "../build-${LLVM_ARCH}"
+OECMAKE_BUILDPATH = "../build"
 EXTRA_OECMAKE = "\
   -DLLVM_TABLEGEN=${STAGING_BINDIR_NATIVE}/llvm-tblgen \
   -DLLVM_TARGETS_TO_BUILD=${LLVM_ARCH} \
