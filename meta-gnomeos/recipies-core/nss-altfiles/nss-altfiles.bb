@@ -27,5 +27,4 @@ PKG_${PN}-dbg = "${PN}-dbg"
 #
 EXTRA_OECONF = "--datadir=/lib --prefix=/"
 
-inherit autotools
-
+inherit autotools-brokensep
