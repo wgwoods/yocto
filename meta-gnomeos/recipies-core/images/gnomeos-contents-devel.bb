@@ -10,8 +10,8 @@ inherit gnomeos-contents
 PACKAGE_INSTALL += "\
 		task-gnomeos-contents-devel \
 		libltdl-dev \
-		libgcc-s-dev \
-		libc6-dbg \
+		libgcc-dev \
+		glibc-dbg \
 		"
 
 DEPENDS += " task-gnomeos-contents-devel "
