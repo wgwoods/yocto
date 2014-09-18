@@ -124,4 +124,5 @@ RDEPENDS_${PN} += "\
          syslinux-misc \
 	 cyrus-sasl \
 	 elfutils \
+         ca-certificates \
 	 "
