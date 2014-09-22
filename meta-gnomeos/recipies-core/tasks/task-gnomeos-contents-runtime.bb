@@ -125,4 +125,5 @@ RDEPENDS_${PN} += "\
 	 cyrus-sasl \
 	 elfutils \
          ca-certificates \
+         libgcrypt \
 	 "
