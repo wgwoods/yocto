@@ -101,6 +101,7 @@ RDEPENDS_${PN} += "     \
 	 expat-dev \
 	 intltool \
 	 texinfo \
+	 perl-misc \
 	 python-pyparsing \
 	 cyrus-sasl-dev \
 	 elfutils-dev \
