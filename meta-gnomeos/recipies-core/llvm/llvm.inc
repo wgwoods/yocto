@@ -5,7 +5,7 @@ LICENSE = "NCSA"
 LIC_FILES_CHKSUM = "file://LICENSE.TXT;md5=71df953c321b5b31ae94316a7fb6a7f3"
 
 DEPENDS += "llvm-native"
-DEPENDS_virtclass-native = "cmake-native"
+DEPENDS_virtclass-native = "cmake-native python-native"
 
 INC_PR = "r1"
 
