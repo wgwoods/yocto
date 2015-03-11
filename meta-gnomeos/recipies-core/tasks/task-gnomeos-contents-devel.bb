@@ -81,6 +81,7 @@ RDEPENDS_${PN} += "     \
 	 libcap-dev \
 	 libcap-bin \
 	 libgpg-error-dev \
+	 gpgme-dev \
 	 libtasn1-dev \
 	 libtasn1-bin \
 	 libgcrypt-dev \
