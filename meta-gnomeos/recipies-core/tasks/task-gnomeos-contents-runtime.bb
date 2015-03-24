@@ -25,6 +25,7 @@ RDEPENDS_${PN} += "\
 	 libexif \
 	 libstdc++ \
 	 gnutls \
+	 gpgme \
 	 libogg \
 	 libssp \
 	 glibc-gconvs \
