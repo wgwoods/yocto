@@ -13,7 +13,7 @@ BINCONFIG = "${bindir}/ncurses-config"
 inherit autotools binconfig-disabled multilib_header
 
 # Upstream has useful patches at times at ftp://invisible-island.net/ncurses/
-SRC_URI = "${GNU_MIRROR}/ncurses/ncurses-${PV}.tar.gz"
+SRC_URI = "ftp://invisible-island.net/${BPN}/current/${BP}-${REVISION}.tgz"
 
 EXTRA_AUTORECONF = "-I m4"
 CONFIG_SITE =+ "${WORKDIR}/config.cache"
@@ -97,12 +97,15 @@ do_configure() {
         # broken because it requires stdin to be pollable (which is
         # not the case for /dev/null redirections)
         export cf_cv_working_poll=yes
+	#Remove ${includedir} from CPPFLAGS, need for cross compile
+	sed -i 's#-I${cf_includedir}##g' ${S}/configure || die "sed CPPFLAGS"
 
 	( cd ${S}; gnu-configize --force )
 	ncurses_configure "narrowc" || \
 		return 1
 	! ${ENABLE_WIDEC} || \
 		ncurses_configure "widec" "--enable-widec" "--without-progs"
+
 }
 
 do_compile() {
@@ -229,7 +232,14 @@ do_install() {
             # At some point we can rely on coreutils 8.16 which has ln -r.
             lnr ${D}${base_libdir}/libtinfo.so.5 ${D}${libdir}/libtinfo.so
         fi
-
+        if [ -d "${D}${includedir}/ncurses" ]; then
+            for f in `find ${D}${includedir}/ncurses -name "*.h"`
+            do
+	        f=`basename $f`
+	        test -e ${D}${includedir}/$f && continue
+                ln -sf ncurses/$f ${D}${includedir}/$f
+            done
+        fi
         oe_multilib_header curses.h
 }
 
