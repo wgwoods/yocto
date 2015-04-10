@@ -104,6 +104,7 @@ RDEPENDS_${PN} += "     \
 	 texinfo \
 	 perl-misc \
 	 python-pyparsing \
+	 python-six \
 	 cyrus-sasl-dev \
 	 elfutils-dev \
 	 libelf-dev \
